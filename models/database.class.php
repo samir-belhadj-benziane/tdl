@@ -1,13 +1,11 @@
 <?php
 
-
-
 class DataBase
 {
-  private $host = "localhost";
-  private $username = "root";
-  private $dbname = "tdl";
-  private $pswd = "";
+  private $host = "mysql-taskies.alwaysdata.net";
+  private $dbname = "taskies_database";
+  private $username = "taskies";
+  private $pswd = "Mytasksprogram13";
 
   public function connect()
   {
@@ -16,5 +14,10 @@ class DataBase
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $pdo;
   }
+  
 }
+
+$database = new DataBase();
+
+$connect = $database->connect();
 
